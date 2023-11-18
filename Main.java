@@ -10,6 +10,7 @@ public class Main {
                 "\nThe month is " + month(data) +
                 "\nThe day of the month is " + day(data) +
                 "\nThe day of the week is " + dayWeek(data));
+        System.out.println();
     }
     public static int year(OffsetDateTime data){
         return data.getYear();
