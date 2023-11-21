@@ -12,16 +12,33 @@ public class Main {
                 "\nThe day of the week is " + dayWeek(data));
         System.out.println();
     }
-    public static int year(OffsetDateTime data){
+
+    public static Object year(OffsetDateTime data) {
+        if (data == null) {
+            return null;
+        }
         return data.getYear();
     }
-    public static String month(OffsetDateTime data){
+
+    public static String month(OffsetDateTime data) {
+        if (data == null) {
+            return null;
+        }
         return data.format(DateTimeFormatter.ofPattern("MMMM"));
     }
-    public static int day(OffsetDateTime data){
+
+    public static Object day(OffsetDateTime data) {
+        if (data == null) {
+            return null;
+        }
         return data.getDayOfMonth();
     }
-    public static String dayWeek(OffsetDateTime data){
+
+    public static String dayWeek(OffsetDateTime data) {
+
+        if (data == null) {
+            return null;
+        }
         return data.format(DateTimeFormatter.ofPattern("EEEE"));
     }
 }

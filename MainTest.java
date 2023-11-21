@@ -8,26 +8,47 @@ class MainTest {
 
     @Test
     void year() {
-        int year = testing.year(OffsetDateTime.parse("2002-03-01T13:00:00Z"));
+        Object year = testing.year(OffsetDateTime.parse("2002-03-01T13:00:00Z"));
         assertEquals(2002, year);
     }
 
     @Test
     void month() {
         String month = testing.month(OffsetDateTime.parse("2002-03-01T13:00:00Z"));
-        assert month.equals("marzo") : "La data è sbagliata";
+        assertEquals("marzo",month);
     }
 
     @Test
     void day() {
-        int day = testing.day(OffsetDateTime.parse("2002-03-01T13:00:00Z"));
+        Object day = testing.day(OffsetDateTime.parse("2002-03-01T13:00:00Z"));
         assertEquals(01,day);
     }
 
     @Test
     void getDayWeek() {
         String dayWeek = testing.dayWeek(OffsetDateTime.parse("2002-03-05T13:00:00Z"));
-        System.out.println(dayWeek);
-        assert dayWeek.equals("martedì") : "La data è sbagliata";
+        assertEquals("martedì",dayWeek);
+    }
+    void yearNull() {
+        Object year = null;
+        assertNull(year,"The year is null");
+    }
+
+    @Test
+    void monthNull() {
+        String month = null;
+        assertNull(month,"The month is null");
+    }
+
+    @Test
+    void dayNull() {
+        Object day = null;
+        assertNull(day,"The day is null");
+    }
+
+    @Test
+    void getDayWeekNull() {
+        String dayWeek = null;
+        assertNull(dayWeek,"The day of the week is null");
     }
 }
